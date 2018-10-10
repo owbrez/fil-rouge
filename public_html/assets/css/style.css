@@ -58,6 +58,9 @@ table {
 /* Général */
 
 /* PAGE De connexion */
+body{
+    background-image: url('img/fond-connexion.jpg');
+}
 
 /* PAGE Salle de Jeu */
 
