@@ -74,21 +74,38 @@ header{
 	vertical-align: top;
 	text-align: center;
         margin: 5px 10px;
+.connexion label.avatar:hover{        
+        transition:1s;
+        }
 }
 
 .connexion label.labelAvatarUn{
     background-image: url('../img/avatars/avatar-bleu.jpg');
-    box-shadow: 0px 0px 10px 10px #81BEF7;
+    
+}.connexion label.labelAvatarUn:hover{
+    box-shadow: 0px 0px 5px 5px #81DAF5;
+    transition:1s;
 }
+
 .connexion label.labelAvatarDeux{
     background-image: url('../img/avatars/avatar-green.jpg');
+}.connexion label.labelAvatarDeux:hover{
+     box-shadow: 0px 0px 5px 5px #01DFA5;
+      
 }
 .connexion label.labelAvatarTrois{
     background-image: url('../img/avatars/avatar-orange.jpg');
+    
+}.connexion label.labelAvatarTrois:hover{
+    box-shadow: 0px 0px 5px 5px #FE9A2E;
 }
 .connexion label.labelAvatarQuatre{
     background-image: url('../img/avatars/avatar-violet.jpg');
+    
+}.connexion label.labelAvatarQuatre:hover{
+    box-shadow: 0px 0px 5px 5px #AC58FA;
 }
+
 .connexion input.avatar{
     
     
