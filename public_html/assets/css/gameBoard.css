@@ -1,2 +1,140 @@
 @import url(style.css);
 
+
+html{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+/* grid flex */
+
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.col.col-around {
+    justify-content: space-around;
+}
+col-flow-vertical{
+    flex-direction:column;
+}
+
+.col > *{
+    box-sizing:border-box;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 49%;
+    padding: 1em;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.col-4 {
+    width: 20%;
+}
+
+.col-6{
+    width:15%;
+}
+
+/* Salle de Jeu */
+
+body.salleDeJeu{
+    background-image:url('img/fond-salle-de-jeu.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height:100%;
+    background-color:#000;
+}
+
+body.salleDeJeu section.zoneJoueurs img{
+    width:120px;
+    height:auto;
+}
+
+body.salleDeJeu .unJoueur{
+    text-align:center;
+    max-height:100%;
+}
+
+body.salleDeJeu .unJoueur{
+    position:absolute;
+}
+
+body.salleDeJeu section.zoneJoueurs .unJoueur{
+    height:200px;
+}
+/* Zone du Joueur */
+
+body.salleDeJeu section.zoneJoueurs.zoneBas{
+    position:absolute;
+    bottom:0;
+    left:200px;
+    width:calc(100% - 400px);
+    height:340px;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneBas .cartes{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneBas img.uneCarte{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom: 0;
+    margin:0 auto;
+    width:160px;
+    height:250px;  
+}
+
+/* Zones des autres joueurs */
+
+body.salleDeJeu section.zoneJoueurs.zoneHaut{
+    position:absolute;
+    top:0;
+    left:200px;
+    width:calc(100% - 400px);
+    height:200px;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneGauche{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:200px;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneDroite{
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:200px;
+}
+
+body.salleDeJeu section.zoneJoueurs:not(.zoneBas) .uneCarte{
+    display:inline-block;
+    width:120px;
+    height:200px;
+    background-image:url(../img/dos-carte.jpg);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
