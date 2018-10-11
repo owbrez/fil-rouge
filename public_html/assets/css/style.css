@@ -82,27 +82,27 @@ header{
 .connexion label.labelAvatarUn{
     background-image: url('../img/avatars/avatar-bleu.jpg');
     
-}.connexion label.labelAvatarUn:hover{
+}.connexion label.labelAvatarUn:hover,.connexion label.labelAvatarUn:checked{
     box-shadow: 0px 0px 5px 5px #81DAF5;
     transition:1s;
 }
 
 .connexion label.labelAvatarDeux{
     background-image: url('../img/avatars/avatar-green.jpg');
-}.connexion label.labelAvatarDeux:hover{
+}.connexion label.labelAvatarDeux:hover,.connexion label.labelAvatarDeux:checked{
      box-shadow: 0px 0px 5px 5px #01DFA5;
       
 }
 .connexion label.labelAvatarTrois{
     background-image: url('../img/avatars/avatar-orange.jpg');
     
-}.connexion label.labelAvatarTrois:hover{
+}.connexion label.labelAvatarTrois:hover,.connexion label.labelAvatarTrois:checked{
     box-shadow: 0px 0px 5px 5px #FE9A2E;
 }
 .connexion label.labelAvatarQuatre{
     background-image: url('../img/avatars/avatar-violet.jpg');
     
-}.connexion label.labelAvatarQuatre:hover{
+}.connexion label.labelAvatarQuatre:hover,.connexion label.labelAvatarQuatre:checked{
     box-shadow: 0px 0px 5px 5px #AC58FA;
 }
 
