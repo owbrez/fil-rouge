@@ -60,11 +60,15 @@ table {
 /* PAGE De connexion */
 body{
     background-image: url('img/fond-connexion.jpg');
-    text-align: center
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    
 }
 header{
     text-align: center
-    
+}
+input{
+    text-decoration: underline dotted red;
 }
 
 .connexion label.avatar{
