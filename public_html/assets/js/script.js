@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-<script>
+ajouterClasse('connexion input.avatar','checked');
 
-    function ajouterClasse(labelvatar,checked){
-        connexion input.avatar();
-$('label.avatar').addClass('checked');
+function ajouterClasse(label,classe){
+$(label).addClass(classe);
 }
-</script>
