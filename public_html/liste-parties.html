@@ -11,31 +11,44 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-        <form>
+    
+    <header><h1>Listes des parties de jeu</h1></header>
+    
+    <body class="listeParties">
+        <div class="liste">
 
             <h2>Liste Partie:</h2>
 
             <label>Nom:</label>
-            <input type="text" name="nom" id="nompartie">
-            <input type="submit" value="Creer partie">
-        </form>
+            <input type="text" name="nom" id="unePartie">
+            <input type="submit" value="Creer ">
+        </div>
         
-        <form>
-        <div class="connexion">
-        <p>Les joueurs</p>
-        <li>  </li>
-        <li>  </li>
-        <li></li>
-    </div>
-    </form>
-        
-        <form>
+        <div class="joueur">
             <h2>Nom Partie</h2>
-            <input type="button" name="nomJoueur">
-            <input type="button" name="pseudo">
+            <p>Les joueurs</p>
+           <ul>
+            <li>Pseudo:<a href=""><img src=""></a> </li>
+            <li>Pseudo:<a href=""><img src=""></a>  </li>
+            <li>Pseudo:<a href=""><img src=""></a></li>
+            <li>Pseudo:<a href=""><img src=""></a></li>
+            </ul>
+            <p></p>
+            <label></label>
             
-            <input type="submit" value="Creer">
-        </form>
+            <input type="submit" value="Valider">
+             <input type="submit" value="Annuler">
+    </div>
+         
+        <div class="creerPartie">
+            <h2>CREER</h2>
+            <div><img src="" alt=""/></div>
+            <div><img src="" alt=""/></div>
+            <div><img src="" alt=""/></div>
+            <div><img src="" alt=""/></div>
+            <div><img src="" alt=""/></div>
+             
+             
+        </div>
 </body>
 </html>
