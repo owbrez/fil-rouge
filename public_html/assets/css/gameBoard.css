@@ -10,99 +10,122 @@ body.salleDeJeu{
     height:100%;
     background-color:#000;
 }
-
-body.salleDeJeu section.zoneJoueurs img{
-    width:120px;
-    height:auto;
-}
-
-body.salleDeJeu .unJoueur{
+body.salleDeJeu .zoneJoueur{
     text-align:center;
     max-height:100%;
+    display:inline-block;
 }
 
-body.salleDeJeu .unJoueur{
-    position:absolute;
-}
-
-body.salleDeJeu section.zoneJoueurs .unJoueur{
-    height:200px;
-}
 /* Zone du Joueur */
 
-body.salleDeJeu section.zoneJoueurs.zoneBas{
+body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal{
     position:absolute;
     bottom:0;
-    left:200px;
-    width:calc(100% - 400px);
+    width:100%;
     height:340px;
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneBas .zoneJoueur{
+body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal .zoneJoueur{
     height:100%;
     position:relative;
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneBas .cartes{
-    width:100%;
-    height:100%;
-    position:relative;
+body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal .cartes{
+    
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneBas img.uneCarte{
+body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal img.uneCarte{
     position:absolute;
     left:0;
     right:0;
     bottom: 0;
     margin:0 auto;
-    width:160px;
-    height:250px;  
+    width:7em;
+    height:10em;  
     transform-origin: bottom center;
     cursor:pointer;
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneBas img.uneCarte.selectionee{
+body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal img.uneCarte.selectionee{
     z-index:30 !important;
     border:solid 1px #fff;
-    top:0;
 }
 
 
-/* Zones des autres joueurs */
+/* Les autres joueurs */
 
-body.salleDeJeu section.zoneJoueurs.zoneHaut{
+    /* Les Zones gauche et droie */
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires{
     position:absolute;
     top:0;
-    left:200px;
-    width:calc(100% - 400px);
-    height:200px;
+    height:100%;
+    width:30%;
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneGauche{
-    position:absolute;
-    top:0;
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires.zoneGauche{
     left:0;
-    height:100%;
-    width:200px;
+    text-align:left;
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneDroite{
-    position:absolute;
-    top:0;
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires.zoneDroite{
     right:0;
-    height:100%;
-    width:200px;
+    text-align:right;
 }
 
-body.salleDeJeu section.zoneJoueurs:not(.zoneBas) .uneCarte{
+/* Les Joueurs */
+
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires .zoneJoueur .unJoueur,body.salleDeJeu section.zoneJoueurs.zoneAdversaires .zoneJoueur .cartes{
     display:inline-block;
-    width:120px;
-    height:200px;
+    vertical-align: top;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires .zoneJoueur .unJoueur{
+    width:20%;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires .zoneJoueur .cartes{
+    width:79%;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires.zoneGauche .zoneJoueur .cartes{
+    text-align:left;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires.zoneDroite .zoneJoueur .cartes{
+    text-align:right;
+}
+
+/* Le Profil du joueur */
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires img{
+    width:100%;
+    height:auto;
+}
+
+body.salleDeJeu section.zoneJoueurs.zoneAdversaires h2{
+    font-size:0.6em;
+    color:#fff;
+    background-color:#000;
+    color:#fff;
+    padding:0.4em;
+    position:relative;
+    top:-10px;
+}
+
+
+
+
+/* Les Cartes */
+
+body.salleDeJeu section.zoneJoueurs:not(.zoneJoueurPrincipal) .uneCarte{
+    display:inline-block;
+    width:2.5em;
+    height:4em;
     background-image:url(../img/dos-carte.jpg);
     background-size:contain;
     background-repeat:no-repeat;
 }
 
-body.salleDeJeu section.zoneJoueurs:not(.zoneBas) .uneCarte:not(:first-child){
-    
-}
+
