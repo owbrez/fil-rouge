@@ -43,15 +43,12 @@ function positionInitialeCarte(){
 
 function selectionCarte()
 {
-    if($('.zoneBas .uneCarte').length < 2){
     if($(this).hasClass('selectionee')){
         $(this).removeClass('selectionee');
     }else{
         $(this).addClass('selectionee'); 
-        lesCartesSelectionees.push($(this)); 
-    }
-    }else{
-        $(lesCartesSelectionees[0]).removeClass('selectionee');
-        
+        lesCartesSelectionees.push($(this));
+        console.log('carte selectionée');  
+        console.log($(this));       
     }
 }
