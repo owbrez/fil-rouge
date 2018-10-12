@@ -88,6 +88,11 @@ body.salleDeJeu section.zoneJoueurs.zoneBas{
     height:340px;
 }
 
+body.salleDeJeu section.zoneJoueurs.zoneBas .zoneJoueur{
+    height:100%;
+    position:relative;
+}
+
 body.salleDeJeu section.zoneJoueurs.zoneBas .cartes{
     width:100%;
     height:100%;
@@ -97,12 +102,20 @@ body.salleDeJeu section.zoneJoueurs.zoneBas .cartes{
 body.salleDeJeu section.zoneJoueurs.zoneBas img.uneCarte{
     position:absolute;
     left:0;
-    top:0;
+    right:0;
     bottom: 0;
     margin:0 auto;
     width:160px;
     height:250px;  
+    transform-origin: bottom center;
+    cursor:pointer;
 }
+
+body.salleDeJeu section.zoneJoueurs.zoneBas img.uneCarte.selectionee{
+    z-index:30 !important;
+    border:solid 1px #fff;
+}
+
 
 /* Zones des autres joueurs */
 
@@ -137,4 +150,8 @@ body.salleDeJeu section.zoneJoueurs:not(.zoneBas) .uneCarte{
     background-image:url(../img/dos-carte.jpg);
     background-size:contain;
     background-repeat:no-repeat;
+}
+
+body.salleDeJeu section.zoneJoueurs:not(.zoneBas) .uneCarte:not(:first-child){
+    
 }
