@@ -57,6 +57,56 @@ table {
 
 /* Général */
 
+
+
+html{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+/* grid flex */
+
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.col.col-around {
+    justify-content: space-around;
+}
+col-flow-vertical{
+    flex-direction:column;
+}
+
+.col > *{
+    box-sizing:border-box;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 49%;
+    padding: 1em;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.col-4 {
+    width: 20%;
+}
+
+.col-6{
+    width:15%;
+}
 /* PAGE De connexion */
 body{
     background-image: url('img/fond-connexion.jpg');

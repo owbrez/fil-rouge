@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     
    $('label.avatar').click (ajouterClasse('connexion label.avatar','checked'));
