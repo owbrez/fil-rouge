@@ -1,29 +1,46 @@
 var lesCartes = [];
 var lesCartesSelectionees = [];
+var lesJoueurs = [];
+
+
+/* Pour les Tests, les joueurs sont créés ici */
+var joueurUn = [['1','1'],['1','2','3','3','3','3','3']];
+var joueurDeux = [['1','1'],['1','2','1','3','4','2','5']];
+var joueurTrois = [['1','1'],['1','2','1','3','4','2','5']];
+var joueurQuatre = [['1','1'],['1','2','1','3','4','2','5']];
+
+
 $(document).ready(function(){
-    var nbCartes = $('.zoneBas .uneCarte').length;
-    $('.zoneBas .uneCarte').each(function(){
-        lesCartes.push(this);
-    });
-    orienterCartes(lesCartes,nbCartes);
-    $('.zoneJoueurPrincipal .uneCarte:not(.selectionee)').hover(mettreEnAvantCarte,positionInitialeCarte);
-    $('.zoneBas .uneCarte').on('click',selectionCarte);
-    $('.zoneBas .uneCarte').mouseenter(mettreEnAvantCarte);
-    $('.zoneBas .uneCarte:not(.selectionee)').mouseleave(positionInitialeCarte);
+    var nbCartes = joueurUn[1].length;
+    genererCartes('.zoneJoueurPrincipal .cartes',nbCartes);
+    orienterCartes(nbCartes);
+    $('.zoneJoueurPrincipal .uneCarte:not(.selectionee)').hover(positionInitialeCarte);
+    $('.zoneJoueurPrincipal .uneCarte img').on('click',selectionCarte);
+    $('.zoneJoueurPrincipal .uneCarte:not(.selectionee)').mouseleave(positionInitialeCarte);
+    $('button.lancerSort').on('click',lancerSort);
 });
 
-function orienterCartes(lesCartes,nbCartes){
-    var angle = 180 / nbCartes;
-    var angleDepart = -70;
-    var origin = 20 *nbCartes;
-    for(var i = 0; i< nbCartes; i++){       
-        $(lesCartes[i]).css("transform","rotate("+angle+"deg)");  $(lesCartes[i]).css("transform-origin","center "+origin+"em");
-        angle += angle;
-        }
+function genererCartes(joueur,nbCartes){
+    var uneCarte = '<div class="uneCarte"><img src="assets/img/ingredients/corne-de-licorne.jpg" alt=""></div>';
+    for(var i = 0; i < nbCartes; i++){
+        $(joueur).append(uneCarte);
+    }
+    return lesCartes;
 }
 
-function mettreEnAvantCarte(){
-    $(this).css('z-index','30');
+function orienterCartes(nbCartes){
+    $('.zoneJoueurPrincipal .cartes .uneCarte').each(function(){
+        lesCartes.push($(this));
+    });
+    var degree = Math.round(20 / nbCartes);
+    var angleInit = -(nbCartes/2) * degree;
+    var origin = 20 * nbCartes;
+    for(var i = 0; i < nbCartes ; i++){ 
+        $(lesCartes[i]).css("transform","rotate("+angleInit+"deg)");  
+        $(lesCartes[i]).css("transform-origin","center 80em");
+        $(lesCartes[i]).css("z-index",0);
+        angleInit += degree;
+    }
 }
 
 function positionInitialeCarte(){
@@ -32,12 +49,26 @@ function positionInitialeCarte(){
 
 function selectionCarte()
 {
-    if($(this).hasClass('selectionee')){
-        $(this).removeClass('selectionee');
-    }else{
-        $(this).addClass('selectionee'); 
-        lesCartesSelectionees.push($(this));
-        console.log('carte selectionée');  
-        console.log($(this));       
+    if(lesCartesSelectionees.length != 2){
+        $('button.lancerSort').hide();
+        if($(this).hasClass('selectionee')){
+            $(this).removeClass('selectionee');
+        }else{
+            $(this).addClass('selectionee'); 
+            lesCartesSelectionees.push($(this));   
+            if(lesCartesSelectionees.length === 2){
+                $('button.lancerSort').show();
+                lesCartesSelectionees = [];                
+            }
+        }
     }
-} 
+}
+
+function lancerSort(){
+        var destinationTop = $('.portail').css('top');
+        var destinationLeft = $('.portail').css('top');
+    $('.selectionee').each(function(){
+        $(this).css('top',destinationTop);
+        $(this).css('position','fixed');
+    });
+}
