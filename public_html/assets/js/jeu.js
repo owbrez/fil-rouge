@@ -38,7 +38,7 @@ function orienterCartes(nbCartes){
     for(var i = 0; i < nbCartes ; i++){ 
         $(lesCartes[i]).css("transform","rotate("+angleInit+"deg)");  
         $(lesCartes[i]).css("transform-origin","center 80em");
-        $(lesCartes[i]).css("z-index",0);
+        $(lesCartes[i]).css("z-index",0); 
         angleInit += degree;
     }
 }

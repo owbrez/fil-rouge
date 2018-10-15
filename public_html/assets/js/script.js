@@ -17,7 +17,7 @@ function playSonCourt(url){
     var audio = new Audio(url);
     audio.volume = 0.2;
     audio.play();
-} 
+}  
 
 function playMusiquefond(){
     var audio = new Audio('assets/son/fond/musique-fond.mp3');
