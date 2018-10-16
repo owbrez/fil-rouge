@@ -55,7 +55,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Général */
+/* General */
 
 
 
@@ -243,8 +243,6 @@ form.connexion{
     background-color:beige;
 }
 
-/* PAGE Salle de Jeu */
-
 /* PAGE Liste des Parties */
 
 .creerUnePartie{
@@ -310,10 +308,6 @@ form.connexion{
     margin:0.5em;
 }
 
-.unePartie h2{
-    
-}
-
 .unePartie button{
     display:block;
     margin: 0 auto;
@@ -330,3 +324,47 @@ form.connexion{
     color:#fff;
 }
 /* PAGE Salle d'attente */
+
+
+
+/* PAGE Salle de Jeu */
+
+.salleAttente{
+    background-image:url('img/fond-salle-de-jeu.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.salleAttente .lesJoueurs{
+    margin:2em;
+    height:auto;
+}
+
+.salleAttente .lesJoueurs .unJoueur{
+    display:inline-block;
+    width:calc(100%/8);
+    height:280px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.salleAttente .lesJoueurs .unJoueur:not(.empty){
+    background-color:#000;
+}
+
+
+.salleAttente .lesJoueurs .unJoueur img{
+width:100%;
+height:auto;
+}
+
+.salleAttente .lesJoueurs .unJoueur h2{
+    color:#fff;
+    background-color:#000;
+    padding: 0.2em 0.5em;
+}
+
+.salleAttente .lesJoueurs .unJoueur.empty{
+    border:dashed 2px #fff;
+}
