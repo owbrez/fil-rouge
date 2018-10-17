@@ -48,10 +48,6 @@ body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal .zoneJoueur .unJoueur im
     width:auto;
 }
 
-body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal .cartes{
-
-}
-
 body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal .uneCarte{
     position:absolute;
     left:0;

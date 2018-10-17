@@ -57,12 +57,10 @@ table {
 
 /* General */
 
-
-
 html{
     height:100%;
     width:100%;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* grid flex */
@@ -137,8 +135,22 @@ body{
     
 }
 header{
-    text-align: center
+    text-align: center;
+    position:relative;
 }
+header:after{
+content:'';
+width:calc(100%-1em);
+height:calc(100%-1em);
+position:absolute;
+top:0.5em;
+left:0.5em;
+right:0.5em;
+bottom:0.5em; 
+border:solid 1px goldenrod;
+box-sizing: border-box;
+}
+
 input.error{
     text-decoration: underline dotted red;
 }
@@ -160,7 +172,7 @@ form.connexion{
 .connexion header{
     margin-top:0;
     margin-bottom: 1em;
-    background-color:purple;
+    background-image:url('img/fond-menu.jpg');
 }
 .connexion header h1{
     margin:0;
@@ -276,7 +288,7 @@ form.connexion{
 .listeDesParties header{
     margin-top:0;
     margin-bottom: 1em;
-    background-color:purple;
+    background-image:url('img/fond-menu.jpg');
 }
 .listeDesParties header h1{
     margin:0;
@@ -335,36 +347,75 @@ form.connexion{
     background-position: center;
 }
 
+.salleAttente .container{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    width:80%;
+    height:400px;
+
+    margin:auto;
+    display:block;
+
+    background-color:rgba(255,255,255,0.5);
+    padding:0;
+    padding-bottom:1em;
+}
+
+.salleAttente .container header{
+    margin-top:0;
+    margin-bottom: 1em;
+    background-image:url('img/fond-menu.jpg');
+}
+.salleAttente .container header h1{
+    padding:0;
+    margin:0;
+    padding:1em;
+    color:#fff;
+}
 
 .salleAttente .lesJoueurs{
+    flex-wrap:wrap; 
     margin:2em;
     height:auto;
 }
 
 .salleAttente .lesJoueurs .unJoueur{
-    display:inline-block;
-    width:calc(100%/8);
-    height:280px;
-    box-sizing: border-box;
-    vertical-align: top;
+    height:10rem;
+    width:8rem;
+    margin:0.1em;
 }
 
 .salleAttente .lesJoueurs .unJoueur:not(.empty){
     background-color:#000;
 }
 
-
 .salleAttente .lesJoueurs .unJoueur img{
-width:100%;
-height:auto;
+width:auto;
+height:8.5rem;
 }
 
 .salleAttente .lesJoueurs .unJoueur h2{
     color:#fff;
     background-color:#000;
-    padding: 0.2em 0.5em;
+    padding: 0.1em 0.2em;
+    font-size:1em;
 }
 
 .salleAttente .lesJoueurs .unJoueur.empty{
     border:dashed 2px #fff;
+}
+
+.salleAttente button{
+    display:block;
+    margin: 0 auto;
+    padding:0.6em 2em;
+    background:ivory;
+    border:none;
+    margin-top:1.5em;
+    cursor:pointer;
+    border:solid 1px #000;
 }

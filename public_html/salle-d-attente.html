@@ -5,36 +5,41 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>Lancement de {{nom Partie}}</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/librairie/jquery.js"></script>
-    </head>
-    <body class="salleAttente">
-        <header><h1>En attente des joueurs</h1></header>
-<section class="lesJoueurs">
-    <div class="unJoueur">
-        <img src="assets/img/avatars/avatar-bleu.jpg" alt="">
-        <H2>Ensorceleur</H2>
+
+<head>
+    <title>Lancement de {{nom Partie}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/librairie/jquery.js"></script>
+</head>
+
+<body class="salleAttente">
+    <div class="container">
+        <header>
+            <h1>En attente des joueurs</h1>
+        </header>
+        <section class="lesJoueurs col">
+            <div class="unJoueur">
+                <img src="assets/img/avatars/avatar-bleu.jpg" alt="">
+                <H2>Ensorceleur</H2>
+            </div>
+            <div class="unJoueur">
+                <img src="assets/img/avatars/avatar-green.jpg" alt="">
+                <H2>Druide</H2>
+            </div>
+            <div class="unJoueur">
+                <img src="assets/img/avatars/avatar-orange.jpg" alt="">
+                <H2>Paladin</H2>
+            </div>
+            <div class="unJoueur">
+                <img src="assets/img/avatars/avatar-violet.jpg" alt="">
+                <H2>Magicien</H2>
+            </div>
+            <div class="unJoueur empty"></div>
+            <div class="unJoueur empty"></div>
+            <div class="unJoueur empty"></div>
+        </section><button id="Commencer">Commencer la Partie</button>
     </div>
-    <div class="unJoueur">
-        <img src="assets/img/avatars/avatar-green.jpg" alt="">
-        <H2>Druide</H2>
-    </div>
-    <div class="unJoueur">
-        <img src="assets/img/avatars/avatar-orange.jpg" alt="">
-        <H2>Paladin</H2>
-    </div>
-    <div class="unJoueur">
-        <img src="assets/img/avatars/avatar-violet.jpg" alt="">
-        <H2>Magicien</H2>
-    </div>
-    <div class="unJoueur empty"></div>
-    <div class="unJoueur empty"></div>
-    <div class="unJoueur empty"></div>
-</section>
-<section class="buttons"><button id="Commencer">Commencer la Partie</button></section>
-    </body>
+</body>
 </html>
