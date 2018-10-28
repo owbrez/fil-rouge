@@ -5,8 +5,8 @@ var lesJoueurs = [];
 
 /* Pour les Tests, les joueurs sont créés ici */
 //var lesCartes = ['aile-de-chauve-souris','bave-de-crapaud','corne-de-licorne','lapis-lazuli','mandragore'];
-var lesIngredients = [{id:1,nom:"corne de licorne",img:"corne-de-licorne"},{id:2,nom:"aile de chauve souris",img:"aile-de-chauve-souris"},{id:2,nom:"bave de crapaud",img:"bave-de-crapaud"},{id:3,nom:"lapis lazuli",img:"lapis-lazuli"},{id:2,nom:"mandragore",img:"mandragore"}];
-var joueurUn = [['1', '1'], ['1', '2', '3', '3', '3', '3', '3', '1', '2', '3', '3', '3', '3', '3', '3']];
+var lesIngredients = [{id:1,nom:"corne de licorne",img:"corne-de-licorne"},{id:2,nom:"aile de chauve souris",img:"aile-de-chauve-souris"},{id:3,nom:"bave de crapaud",img:"bave-de-crapaud"},{id:4,nom:"lapis lazuli",img:"lapis-lazuli"},{id:5,nom:"mandragore",img:"mandragore"}];
+var joueurUn = [['1', '1'], ['0', '2', '3', '4', '2', '3', '4', '0', '2', '2', '3', '0', '4', '1', '0']];
 var joueurDeux = [['1', '1'], ['1', '2', '1', '3', '4', '2', '5']];
 var joueurTrois = [['1', '1'], ['1', '2', '1', '3', '4', '2', '5']];
 var joueurQuatre = [['1', '1'], ['1', '2', '1', '3', '4', '2', '5']];
@@ -41,6 +41,7 @@ function orienterCartes(nbCartes) {
     }
     for (let i = 1; i < nbCartes; i++) {
         $(lesCartes[i]).css("left", translate + "px");
+        $(lesCartes[i]).css("z-index", i);
         translate += pas;
     }
 }
