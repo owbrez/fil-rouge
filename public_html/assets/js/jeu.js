@@ -1,74 +1,68 @@
 var lesCartes = [];
-var lesCartesSelectionees = [];
+var lesCartesSelectionees = 0;
 var lesJoueurs = [];
 
 
 /* Pour les Tests, les joueurs sont créés ici */
-var joueurUn = [['1','1'],['1','2','3','3','3','3','3']];
-var joueurDeux = [['1','1'],['1','2','1','3','4','2','5']];
-var joueurTrois = [['1','1'],['1','2','1','3','4','2','5']];
-var joueurQuatre = [['1','1'],['1','2','1','3','4','2','5']];
+//var lesCartes = ['aile-de-chauve-souris','bave-de-crapaud','corne-de-licorne','lapis-lazuli','mandragore'];
+var lesIngredients = [{id:1,nom:"corne de licorne",img:"corne-de-licorne"},{id:2,nom:"aile de chauve souris",img:"aile-de-chauve-souris"},{id:2,nom:"bave de crapaud",img:"bave-de-crapaud"},{id:3,nom:"lapis lazuli",img:"lapis-lazuli"},{id:2,nom:"mandragore",img:"mandragore"}];
+var joueurUn = [['1', '1'], ['1', '2', '3', '3', '3', '3', '3', '1', '2', '3', '3', '3', '3', '3', '3']];
+var joueurDeux = [['1', '1'], ['1', '2', '1', '3', '4', '2', '5']];
+var joueurTrois = [['1', '1'], ['1', '2', '1', '3', '4', '2', '5']];
+var joueurQuatre = [['1', '1'], ['1', '2', '1', '3', '4', '2', '5']];
 
 
-$(document).ready(function(){
+$(document).ready(function () {
     var nbCartes = joueurUn[1].length;
-    genererCartes('.zoneJoueurPrincipal .cartes',nbCartes);
+    genererCartes('.zoneJoueurPrincipal .cartes', nbCartes);
     orienterCartes(nbCartes);
-    $('.zoneJoueurPrincipal .uneCarte:not(.selectionee)').hover(positionInitialeCarte);
-    $('.zoneJoueurPrincipal .uneCarte img').on('click',selectionCarte);
-    $('.zoneJoueurPrincipal .uneCarte:not(.selectionee)').mouseleave(positionInitialeCarte);
-    $('button.lancerSort').on('click',lancerSort);
+    $('.zoneJoueurPrincipal .uneCarte img').on('click', selectionCarte);
+    $('button.lancerSort').on('click', lancerSort);
 });
 
-function genererCartes(joueur,nbCartes){
-    var uneCarte = '<div class="uneCarte"><img src="assets/img/ingredients/corne-de-licorne.jpg" alt=""></div>';
-    for(var i = 0; i < nbCartes; i++){
+function genererCartes(joueur, nbCartes) {
+    for (let i = 0; i < nbCartes; i++) {
+        let uneCarte = '<div class="uneCarte"><img src="assets/img/ingredients/'+lesIngredients[joueurUn[1][i]].img+'.jpg" alt=""></div>';
         $(joueur).append(uneCarte);
     }
+    $('.zoneJoueurPrincipal .overlay .nbCartes span').text($('.zoneJoueurPrincipal .uneCarte').length);
     return lesCartes;
 }
 
-function orienterCartes(nbCartes){
-    $('.zoneJoueurPrincipal .cartes .uneCarte').each(function(){
+function orienterCartes(nbCartes) {
+    $('.zoneJoueurPrincipal .cartes .uneCarte').each(function () {
         lesCartes.push($(this));
     });
-    var degree = Math.round(20 / nbCartes);
-    var angleInit = -(nbCartes/2) * degree;
-    var origin = 20 * nbCartes;
-    for(var i = 0; i < nbCartes ; i++){ 
-        $(lesCartes[i]).css("transform","rotate("+angleInit+"deg)");  
-        $(lesCartes[i]).css("transform-origin","center 80em");
-        $(lesCartes[i]).css("z-index",0); 
-        angleInit += degree;
+    translate = 50;
+    pas = 50;
+    if (nbCartes > 14) {
+        pas = (50 - nbCartes);
+        translate = (50 - nbCartes);
+    }
+    for (let i = 1; i < nbCartes; i++) {
+        $(lesCartes[i]).css("left", translate + "px");
+        translate += pas;
     }
 }
 
-function positionInitialeCarte(){
-    $(this).css('z-index','0');
-}
-
-function selectionCarte()
-{
-    if(lesCartesSelectionees.length != 2){
-        $('button.lancerSort').hide();
-        if($(this).hasClass('selectionee')){
-            $(this).removeClass('selectionee');
-        }else{
-            $(this).addClass('selectionee'); 
-            lesCartesSelectionees.push($(this));   
-            if(lesCartesSelectionees.length === 2){
-                $('button.lancerSort').show();
-                lesCartesSelectionees = [];                
-            }
+function selectionCarte() {
+    $('button.lancerSort').hide();
+    if ($(this).hasClass('selectionee')) {
+        $(this).removeClass('selectionee');
+        lesCartesSelectionees = lesCartesSelectionees - 1;
+    } else {
+        if (lesCartesSelectionees < 2) {
+            $(this).addClass('selectionee');
+            lesCartesSelectionees = lesCartesSelectionees + 1;
         }
     }
 }
 
-function lancerSort(){
-        var destinationTop = $('.portail').css('top');
-        var destinationLeft = $('.portail').css('top');
-    $('.selectionee').each(function(){
-        $(this).css('top',destinationTop);
-        $(this).css('position','fixed');
+function lancerSort() {
+    var destinationTop = $('.portail').css('top');
+    var destinationLeft = $('.portail').css('top');
+    $('.selectionee').each(function () {
+        $(this).css('top', destinationTop);
+        $(this).css('position', 'fixed');
     });
 }

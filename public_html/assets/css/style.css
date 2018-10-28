@@ -62,7 +62,7 @@ table {
 html{
     height:100%;
     width:100%;
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
 /* grid flex */
@@ -134,7 +134,7 @@ body{
     background-image: url('img/fond-connexion.jpg');
     text-align: center;
     font-family: 'Cinzel', serif;
-    
+    overflow-y:hidden;
 }
 header{
     text-align: center;
