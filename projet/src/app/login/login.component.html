@@ -4,8 +4,6 @@
             <header><h1>Spells World</h1></header>
 
             <p>Choisissez votre avatar:</p>
-            
-            <div > {{avatar.code}} </div>
             <label *ngFor="let avatar of avatars" for="{{avatar.code}}" class="avatar label{{avatar.code}}"><input type="radio" id="{{avatar.code}}" name="avatar" value="{{avatar.code}}"></label>
 
             <input type="text" name="pseudo" id="pseudo" placeholder="Indiquez votre Pseudo">

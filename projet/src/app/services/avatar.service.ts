@@ -11,7 +11,6 @@ export class AvatarService {
    }
 
   getAvatar(){
-    console.log(this.httpClient.get<Avatar[]>("http://192.168.110.127:666/avatars"));
     return this.httpClient.get<Avatar[]>("http://192.168.110.127:666/avatars");
   }
 }

@@ -1,10 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   <app-login></app-login>
-  <app-avatar></app-avatar>
-  <app-liste-parties></app-liste-parties>
-  <app-salle-d-attente></app-salle-d-attente>
-  <app-salle-de-jeu></app-salle-de-jeu>
+  <app-liste-parties *ngIf="isConnected"></app-liste-parties>
+  <app-salle-d-attente *ngIf="isConnected"></app-salle-d-attente>
+  <app-salle-de-jeu *ngIf="isConnected"></app-salle-de-jeu>
 </div>
 
 <script src="./assets/js/script.js"></script>

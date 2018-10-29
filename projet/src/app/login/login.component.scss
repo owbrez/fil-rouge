@@ -1,8 +1,16 @@
-body{
+app-login{
+  width:100%;
+  height:100%;
+  display:block;
+}
+div.connexion{
   background-image: url('../../assets/css/img/fond-connexion.jpg');
   text-align: center;
   font-family: 'Cinzel', serif;
   overflow-y:hidden;
+  height:100%;
+  width:100%;
+  display:block;
 }
 header{
   text-align: center;
@@ -69,30 +77,30 @@ form.connexion{
   transform:scale(1.1);
 }
 
-.connexion label.labelAvatarUn{
+.connexion label.labelavatar1{
   background-image: url('../../assets/img/avatars/avatar-bleu.jpg');
 
-}.connexion label.labelAvatarUn:hover,.connexion label.labelAvatarUn:checked,.connexion label.labelAvatarUn.checked{
+}.connexion label.labelavatar1:hover,.connexion label.labelavatar1:checked,.connexion label.labelavatar1.checked{
    box-shadow: 0px 0px 5px 5px #81DAF5;
    transition:1s;
  }
 
-.connexion label.labelAvatarDeux{
+.connexion label.labelavatar2{
   background-image: url('../../assets/img/avatars/avatar-green.jpg');
-}.connexion label.labelAvatarDeux:hover,.connexion label.labelAvatarDeux:checked,.connexion label.labelAvatarDeux.checked{
+}.connexion label.labelavatar2:hover,.connexion label.labelavatar2:checked,.connexion label.labelavatar2.checked{
    box-shadow: 0px 0px 5px 5px #01DFA5;
 
  }
-.connexion label.labelAvatarTrois{
+.connexion label.labelavatar3{
   background-image: url('../../assets/img/avatars/avatar-orange.jpg');
 
-}.connexion label.labelAvatarTrois:hover,.connexion label.labelAvatarTrois:checked,.connexion label.labelAvatarTrois.checked{
+}.connexion label.labelavatar3:hover,.connexion label.labelavatar3:checked,.connexion label.labelavatar3.checked{
    box-shadow: 0px 0px 5px 5px #FE9A2E;
  }
-.connexion label.labelAvatarQuatre{
+.connexion label.labelavatar4{
   background-image: url('../../assets/img/avatars/avatar-violet.jpg');
 
-}.connexion label.labelAvatarQuatre:hover,.connexion label.labelAvatarQuatre:checked,.connexion label.labelAvatarQuatre.checked{
+}.connexion label.labelavatar4:hover,.connexion label.labelavatar4:checked,.connexion label.labelavatar4.checked{
    box-shadow: 0px 0px 5px 5px #AC58FA;
  }
 
