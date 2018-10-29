@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -7,6 +8,7 @@ import { ListePartiesComponent } from './liste-parties/liste-parties.component';
 import { SalleDAttenteComponent } from './salle-d-attente/salle-d-attente.component';
 import { SalleDeJeuComponent } from './salle-de-jeu/salle-de-jeu.component';
 import { AvatarComponent } from './avatar/avatar.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AvatarComponent } from './avatar/avatar.component';
     AvatarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from '../services/connection.service';
+import { AvatarService } from '../services/avatar.service';
+import { Avatar } from '../models/avatar';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +9,11 @@ import { ConnectionService } from '../services/connection.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(public connection:ConnectionService) { }
+  avatars: Avatar[] = [];
+  constructor(public connection:ConnectionService, public avatar:AvatarService) { }
 
   ngOnInit() {
-
+    this.getAvatar();
   }
 
   isConnected(){
@@ -24,6 +26,12 @@ export class LoginComponent implements OnInit {
 
   disconnect(){
     this.connection.disconnect();
+  }
+
+  getAvatar(){
+    this.avatar.getAvatar().subscribe(avatars=>{
+      this.avatars = avatars;
+    });
   }
 
 }
