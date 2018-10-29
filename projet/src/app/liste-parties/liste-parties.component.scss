@@ -1,0 +1,78 @@
+.creerUnePartie{
+  margin:2em auto 0em;
+  width:250px;
+  background-color:ivory;
+  padding:2em;
+}
+.creerUnePartie input{
+  display:block;
+  margin: auto;
+}
+.creerUnePartie *{
+  margin-bottom:0.5em;
+  display:block;
+}
+
+.creerUnePartie input{
+  display:block;
+  margin: 0 auto;
+  padding:0.6em 2em;
+  background:ivory;
+  border:none;
+  margin-top:1.5em;
+  cursor:pointer;
+  border:solid 1px #000;
+  text-align:center;
+
+}
+
+.listeDesParties header{
+  margin-top:0;
+  margin-bottom: 1em;
+  background-image:url('../../assets/css/img/fond-menu.jpg');
+}
+.listeDesParties header h1{
+  margin:0;
+  padding: 1em;
+  color:#fff;
+  font-weight:800;
+}
+
+.listeParties{
+  width:80%;
+  height:400px;
+  display:block;
+  margin :auto;
+  background-color:rgba(255,255,255,0.5);
+  position:absolute;
+  top:auto;
+  left:0;
+  right:0;
+  bottom:2em;
+  padding:0;
+
+}
+
+.unePartie{
+  width:200px;
+  background-color:ivory;
+  padding:1em;
+  display:inline-block;
+  margin:0.5em;
+}
+
+.unePartie button{
+  display:block;
+  margin: 0 auto;
+  padding:0.6em 2em;
+  background:ivory;
+  border:none;
+  margin-top:1.5em;
+  cursor:pointer;
+  border:solid 1px #000;
+}
+
+.listeDesParties button,.creerUnePartie input[type="submit"]{
+  background-color:#000;
+  color:#fff;
+}
