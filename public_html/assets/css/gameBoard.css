@@ -147,7 +147,7 @@ body.salleDeJeu .lesSorts div img{
     width:auto;
     filter:grayscale(100%);
 }
-
+ 
 body.salleDeJeu .lesSorts div.ingredientsSelectionnes{
     opacity:1;
     filter:none;
