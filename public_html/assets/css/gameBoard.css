@@ -17,6 +17,15 @@ body.salleDeJeu .zoneJoueur{
     display:inline-block;
 }
 
+body.salleDeJeu .avatar.sommeil{
+    position:relative;
+}
+body.salleDeJeu .unJoueur img.sommeil{
+background-image:url('../img/gelé.png');
+background-position: center;
+background-size:cover;
+}
+
 /* Zone du Joueur */
 
 body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal{
@@ -135,6 +144,11 @@ body.salleDeJeu .lesSorts div{
     height:50px;
     opacity:0.6;
     display:inline-block;
+    cursor:pointer;
+}
+
+body.salleDeJeu .lesSorts div:hover{
+    opacity:0.8;
 }
 
 body.salleDeJeu .lesSorts div.jouable{
