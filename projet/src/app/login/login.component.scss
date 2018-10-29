@@ -10,8 +10,8 @@ header{
 }
 header:after{
   content:'';
-  width:calc(100%-1em);
-  height:calc(100%-1em);
+  width:calc(100%- 1em);
+  height:calc(100%- 1em);
   position:absolute;
   top:0.5em;
   left:0.5em;

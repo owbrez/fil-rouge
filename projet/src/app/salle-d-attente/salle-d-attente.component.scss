@@ -1,0 +1,78 @@
+.salleAttente{
+  background-image:url('../../assets/css/img/fond-salle-de-jeu.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.salleAttente .container{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+
+  width:80%;
+  height:400px;
+
+  margin:auto;
+  display:block;
+
+  background-color:rgba(255,255,255,0.5);
+  padding:0;
+  padding-bottom:1em;
+}
+
+.salleAttente .container header{
+  margin-top:0;
+  margin-bottom: 1em;
+  background-image:url('../../assets/css/img/fond-menu.jpg');
+}
+.salleAttente .container header h1{
+  padding:0;
+  margin:0;
+  padding:1em;
+  color:#fff;
+}
+
+.salleAttente .lesJoueurs{
+  flex-wrap:wrap;
+  margin:2em;
+  height:auto;
+}
+
+.salleAttente .lesJoueurs .unJoueur{
+  height:10rem;
+  width:8rem;
+  margin:0.1em;
+}
+
+.salleAttente .lesJoueurs .unJoueur:not(.empty){
+  background-color:#000;
+}
+
+.salleAttente .lesJoueurs .unJoueur img{
+  width:auto;
+  height:8.5rem;
+}
+
+.salleAttente .lesJoueurs .unJoueur h2{
+  color:#fff;
+  background-color:#000;
+  padding: 0.1em 0.2em;
+  font-size:1em;
+}
+
+.salleAttente .lesJoueurs .unJoueur.empty{
+  border:dashed 2px #fff;
+}
+
+.salleAttente button{
+  display:block;
+  margin: 0 auto;
+  padding:0.6em 2em;
+  background:ivory;
+  border:none;
+  margin-top:1.5em;
+  cursor:pointer;
+  border:solid 1px #000;
+}
