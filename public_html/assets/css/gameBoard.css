@@ -123,13 +123,39 @@ body.salleDeJeu section.zoneJoueurs.zoneJoueurPrincipal .nbCartes{
 
 
 body.salleDeJeu .lesSorts{
-    float:right;
-    height:100%;
-    width:30%;
-    position:relative;
-    display:none;
+    height:50px;
+    width:250px;
+    position:absolute;
+    left:15em;
+    top:7em;
 }
 
+body.salleDeJeu .lesSorts div{
+    width:50px;
+    height:50px;
+    opacity:0.6;
+    display:inline-block;
+}
+
+body.salleDeJeu .lesSorts div.jouable{
+    opacity:0.9;
+}
+
+
+body.salleDeJeu .lesSorts div img{
+    height:100%;
+    width:auto;
+    filter:grayscale(100%);
+}
+
+body.salleDeJeu .lesSorts div.ingredientsSelectionnes{
+    opacity:1;
+    filter:none;
+}
+
+body.salleDeJeu .lesSorts div.ingredientsSelectionnes img{
+    filter:grayscale(0%);
+}
 /* Les Adversaires */
 
 /* Les Zones gauche et droie */

@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 function genererCartes(joueur, nbCartes) {
     for (let i = 0; i < nbCartes; i++) {
-        let uneCarte = '<div class="uneCarte"><img src="assets/img/ingredients/'+lesIngredients[joueurUn[1][i]].img+'.jpg" alt=""></div>';
+        let uneCarte = '<div class="uneCarte" data-ingredient="'+lesIngredients[joueurUn[1][i]].img+'"><img src="assets/img/ingredients/'+lesIngredients[joueurUn[1][i]].img+'.jpg" alt=""></div>';
         $(joueur).append(uneCarte);
     }
     $('.zoneJoueurPrincipal .overlay .nbCartes span').text($('.zoneJoueurPrincipal .uneCarte').length);
@@ -47,7 +47,6 @@ function orienterCartes(nbCartes) {
 }
 
 function selectionCarte() {
-    $('button.lancerSort').hide();
     if ($(this).hasClass('selectionee')) {
         $(this).removeClass('selectionee');
         lesCartesSelectionees = lesCartesSelectionees - 1;
@@ -56,6 +55,24 @@ function selectionCarte() {
             $(this).addClass('selectionee');
             lesCartesSelectionees = lesCartesSelectionees + 1;
         }
+    }
+    let lesIngredientsSelectionnes = [];
+    $('.uneCarte .selectionee').each(function(){lesIngredientsSelectionnes.push($(this).parent().attr('data-ingredient'))});
+   // console.log(lesIngredientsSelectionnes);
+    isSortOk(lesIngredientsSelectionnes);
+}
+
+function isSortOk(ingredients){
+    $('.lesSorts div').removeClass('ingredientsSelectionnes');
+    console.log(ingredients.indexOf('bave-de-crapaud'));
+    if((ingredients.indexOf('bave-de-crapaud') >= 0)&&(ingredients.indexOf('corne-de-licorne') >= 0)){
+        $('#invisibilite').addClass('ingredientsSelectionnes');
+    }
+    if((ingredients.indexOf('mandragore') >= 0)&&(ingredients.indexOf('corne-de-licorne') >= 0)){
+        $('#philtre-d-amour').addClass('ingredientsSelectionnes');
+    }
+    if((ingredients.indexOf('bave-de-crapaud') >= 0)&&(ingredients.indexOf('lapis-lazuli') >= 0)){
+        $('#hypnose').addClass('ingredientsSelectionnes');
     }
 }
 
