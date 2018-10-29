@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ConnectionService } from './connection.service';
+import { ConnectionService } from './services/connection.service';
 
 describe('ConnectionService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
