@@ -9,14 +9,13 @@ import {HttpClient} from '@angular/common/http';
 export class ConnectionService {
 
   private connected:boolean;
-
+  public currentPlayer:Player;
   isConnected(){
     return this.connected;
   }
 
   connect(player){ 
-    return this.httpClient.post<Player>("http://192.168.110.127:666/login",player);
-    this.connected = true;
+    return this.httpClient.post<Player>("http://192.168.110.127:666/login",player);    
   }
 
   disconnect(){

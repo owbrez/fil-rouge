@@ -4,6 +4,8 @@ import { AvatarService } from '../services/avatar.service';
 import { Avatar } from '../models/avatar';
 import {FormsModule} from '@angular/forms';
 import { Player } from '../models/player';
+import { GlobalService } from '../services/global.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,8 @@ export class LoginComponent implements OnInit {
   pseudo:string;
   idAvatar:string;
   currentPlayer:Player;
-  constructor(public connection:ConnectionService, public avatar:AvatarService, public form:FormsModule) { }
+  constructor(public connection:ConnectionService, public avatar:AvatarService, public form:FormsModule, 
+    public global:GlobalService, public router:Router) { }
 
   ngOnInit() {
     this.getAvatar();
@@ -27,7 +30,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     let player = {pseudo : this.pseudo,idAvatar : this.idAvatar};
-    this.connection.connect(player).subscribe(player=>{this.currentPlayer = player});
+    this.connection.connect(player).subscribe(player=>{this.global.setCurrentUser(player); this.router.navigate(['/listes-des-parties']);});
+    
   }
 
   disconnect(){
