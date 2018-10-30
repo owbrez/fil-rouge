@@ -1,4 +1,11 @@
+<div class="body listeDesParties">
+    <form action="" class="creerUnePartie">
+      <input type="text" name="nom" id="unePartie" placeholder="Nom de la partie">
+      <input type="submit" value="Créer une Partie">
+  </form>
+  <div class="listeParties">
 
+<header><h1>Listes des tables</h1></header>
   <div class="unePartie" *ngFor="let game of games">
     <h2>{{game.name}}</h2>
     <p>Les joueurs</p>
@@ -7,9 +14,9 @@
       <li class="placeVide"></li>
     </ul>
     <button class="rejoindreUnePartie">S'asseoir à la table</button>
-  </div>
-  <button class="rejoindreUnePartie">S'asseoir à la table</button>
-</div>
 
+  </div>
+
+</div>
 
 
