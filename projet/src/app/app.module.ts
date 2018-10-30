@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -9,6 +10,7 @@ import { ListePartiesComponent } from './liste-parties/liste-parties.component';
 import { SalleDAttenteComponent } from './salle-d-attente/salle-d-attente.component';
 import { SalleDeJeuComponent } from './salle-de-jeu/salle-de-jeu.component';
 import { AvatarComponent } from './avatar/avatar.component';
+import {routes} from './routes'
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { AvatarComponent } from './avatar/avatar.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule    
+    HttpClientModule,
+    RouterModule.forRoot(routes)   
   ],
   providers: [],
   bootstrap: [AppComponent]

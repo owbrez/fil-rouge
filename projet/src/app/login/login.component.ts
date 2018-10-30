@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from '../services/connection.service';
 import { AvatarService } from '../services/avatar.service';
 import { Avatar } from '../models/avatar';
+import {FormsModule} from '@angular/forms';
+import { Player } from '../models/player';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,10 @@ import { Avatar } from '../models/avatar';
 })
 export class LoginComponent implements OnInit {
   avatars: Avatar[] = [];
-  constructor(public connection:ConnectionService, public avatar:AvatarService) { }
+  pseudo:string;
+  idAvatar:string;
+  currentPlayer:Player;
+  constructor(public connection:ConnectionService, public avatar:AvatarService, public form:FormsModule) { }
 
   ngOnInit() {
     this.getAvatar();
@@ -20,8 +25,9 @@ export class LoginComponent implements OnInit {
     return this.connection.isConnected();
   }
 
-  connect(){
-    this.connection.connect();
+  onSubmit(){
+    let player = {pseudo : this.pseudo,idAvatar : this.idAvatar};
+    this.connection.connect(player).subscribe(player=>{this.currentPlayer = player});
   }
 
   disconnect(){

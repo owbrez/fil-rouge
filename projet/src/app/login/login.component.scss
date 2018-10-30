@@ -119,7 +119,7 @@ form.connexion{
   cursor:text;
 }
 
-.connexion input[type="submit"]{
+.connexion input[type="submit"],.connexion button[type="submit"]{
   display:block;
   margin: 0 auto;
   padding:0.6em 2em;
@@ -129,6 +129,6 @@ form.connexion{
   cursor:pointer;
 }
 
-.connexion input[type="submit"]:hover{
+.connexion input[type="submit"]:hover,.connexion button[type="submit"]:hover{
   background-color:beige;
 }

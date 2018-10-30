@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Player } from '../models/player';
 import { Avatar } from '../models/avatar';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class ConnectionService {
     return this.connected;
   }
 
-  connect(){ 
+  connect(player){ 
+    return this.httpClient.post<Player>("http://192.168.110.127:666/login",player);
     this.connected = true;
   }
 
@@ -21,5 +23,5 @@ export class ConnectionService {
     this.connected = false;
   }
 
-  constructor() { }
+  constructor(public httpClient:HttpClient) { }
 }
