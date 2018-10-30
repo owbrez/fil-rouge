@@ -1,78 +1,423 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 oct. 2018, 15:54:20
+    Author     : Administrateur
+*/
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Noto+Serif');
+
+
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* General */
+
+html{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+/* grid flex */
+
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.col.col-around {
+    justify-content: space-around;
+}
+col-flow-vertical{
+    flex-direction:column;
+}
+
+.col > *{
+    box-sizing:border-box;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 49%;
+    padding: 1em;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.col-4 {
+    width: 20%;
+}
+
+.col-6{
+    width:15%;
+}
+
+li {
+  font-size: 20px;    
+  line-height: 1;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 40px;
+  text-align: center;
+    text-transform:capitalize;
+  margin:10px;
+}
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+p{
+  font-size: 20px;    
+  line-height: 1;
+  letter-spacing: 1px;  
+}
+
+/* PAGE De connexion */
+body{
+    background-image: url('../../assets/css/img/fond-connexion.jpg');
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    overflow-y:hidden;
+}
+header{
+    text-align: center;
+    position:relative;
+}
+header:after{
+content:'';
+width:calc(100%-1em);
+height:calc(100%-1em);
+position:absolute;
+top:0.5em;
+left:0.5em;
+right:0.5em;
+bottom:0.5em; 
+border:solid 1px goldenrod;
+box-sizing: border-box;
+}
+
+input.error{
+    text-decoration: underline dotted red;
+}
+
+form.connexion{
+    width:80%;
+    height:580px;
+    display:block;
+    margin :auto;
+    background-color:rgba(255,255,255,0.5);
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:0;
+}
+
+.connexion header{
+    margin-top:0;
+    margin-bottom: 1em;
+    background-image:url('../../assets/css/img/fond-menu.jpg');
+}
+.connexion header h1{
+    margin:0;
+    padding: 1em;
+    color:#fff;
+    font-weight:800;
+}
+
+.connexion label.avatar{
+    display: inline-block;
+	width: 200px;
+        height:280px;
+	vertical-align: top;
+	text-align: center;
+        margin: 5px 10px;
+    background-size:cover;
+    margin-top:1em;
+}
+.connexion label.avatar:hover{        
+        transition:1s;
+        }
+
+.connexion label.avatar:hover,.connexion label.avatar:checked,.connexion label.avatar.checked{
+    transform:scale(1.1);
+}
+
+.connexion label.labelAvatarUn{
+    background-image: url('../../assets/img/avatars/avatar-bleu.jpg');
+    
+}.connexion label.labelAvatarUn:hover,.connexion label.labelAvatarUn:checked,.connexion label.labelAvatarUn.checked{
+    box-shadow: 0px 0px 5px 5px #81DAF5;
+    transition:1s;
+}
+
+.connexion label.labelAvatarDeux{
+    background-image: url('../../assets/img/avatars/avatar-green.jpg');
+}.connexion label.labelAvatarDeux:hover,.connexion label.labelAvatarDeux:checked,.connexion label.labelAvatarDeux.checked{
+     box-shadow: 0px 0px 5px 5px #01DFA5;
+      
+}
+.connexion label.labelAvatarTrois{
+    background-image: url('../../assets/img/avatars/avatar-orange.jpg');
+    
+}.connexion label.labelAvatarTrois:hover,.connexion label.labelAvatarTrois:checked,.connexion label.labelAvatarTrois.checked{
+    box-shadow: 0px 0px 5px 5px #FE9A2E;
+}
+.connexion label.labelAvatarQuatre{
+    background-image: url('../../assets/img/avatars/avatar-violet.jpg');
+    
+}.connexion label.labelAvatarQuatre:hover,.connexion label.labelAvatarQuatre:checked,.connexion label.labelAvatarQuatre.checked{
+    box-shadow: 0px 0px 5px 5px #AC58FA;
+}
+
+.connexion label.avatar input{
+    opacity:0;
+}
+
+.connexion input#pseudo{
+    display:block;
+    display:block;
+    margin: 0 auto;
+    padding:0.6em 2em;
+    background:ivory;
+    border:none;
+    margin-top:1em;
+    cursor:text;
+}
+
+.connexion input[type="submit"]{
+    display:block;
+    margin: 0 auto;
+    padding:0.6em 2em;
+    background:ivory;
+    border:none;
+    margin-top:1.5em;
+    cursor:pointer;
+}
+
+.connexion input[type="submit"]:hover{
+    background-color:beige;
+}
+
+/* PAGE Liste des Parties */
+
 .creerUnePartie{
-  margin:2em auto 0em;
-  width:250px;
-  background-color:ivory;
-  padding:2em;
+    margin:2em auto 0em;
+    width:250px;
+    background-color:ivory;
+    padding:2em;    
 }
 .creerUnePartie input{
-  display:block;
-  margin: auto;
+    display:block;
+    margin: auto;
 }
 .creerUnePartie *{
-  margin-bottom:0.5em;
-  display:block;
+    margin-bottom:0.5em;
+    display:block;
 }
 
 .creerUnePartie input{
-  display:block;
-  margin: 0 auto;
-  padding:0.6em 2em;
-  background:ivory;
-  border:none;
-  margin-top:1.5em;
-  cursor:pointer;
-  border:solid 1px #000;
-  text-align:center;
-
+    display:block;
+    margin: 0 auto;
+    padding:0.6em 2em;
+    background:ivory;
+    border:none;
+    margin-top:1.5em;
+    cursor:pointer;
+    border:solid 1px #000;
+    text-align:center;
+    
 }
 
 .listeDesParties header{
-  margin-top:0;
-  margin-bottom: 1em;
-  background-image:url('../../assets/css/img/fond-menu.jpg');
+    margin-top:0;
+    margin-bottom: 1em;
+    background-image:url('../../assets/css/img/fond-menu.jpg');
 }
 .listeDesParties header h1{
-  margin:0;
-  padding: 1em;
-  color:#fff;
-  font-weight:800;
+    margin:0;
+    padding: 1em;
+    color:#fff;
+    font-weight:800;
 }
 
-.listeParties{
-  width:80%;
-  height:400px;
-  display:block;
-  margin :auto;
-  background-color:rgba(255,255,255,0.5);
-  position:absolute;
-  top:auto;
-  left:0;
-  right:0;
-  bottom:2em;
-  padding:0;
-
+ .listeParties{
+    width:80%;
+    height:400px;
+    display:block;
+    margin :auto;
+    background-color:rgba(255,255,255,0.5);
+    position:absolute;
+    top:auto;
+    left:0;
+    right:0;
+    bottom:2em;
+    padding:0;
+  
 }
 
 .unePartie{
-  width:200px;
-  background-color:ivory;
-  padding:1em;
-  display:inline-block;
-  margin:0.5em;
+    width:200px;
+    background-color:ivory;
+    padding:1em;
+    display:inline-block;
+    margin:0.5em;
 }
 
 .unePartie button{
-  display:block;
-  margin: 0 auto;
-  padding:0.6em 2em;
-  background:ivory;
-  border:none;
-  margin-top:1.5em;
-  cursor:pointer;
-  border:solid 1px #000;
+    display:block;
+    margin: 0 auto;
+    padding:0.6em 2em;
+    background:ivory;
+    border:none;
+    margin-top:1.5em;
+    cursor:pointer;
+    border:solid 1px #000;
 }
 
 .listeDesParties button,.creerUnePartie input[type="submit"]{
-  background-color:#000;
-  color:#fff;
+    background-color:#000;
+    color:#fff;
+}
+/* PAGE Salle d'attente */
+
+
+
+/* PAGE Salle de Jeu */
+
+.salleAttente{
+    background-image:url('../../assets/css/img/fond-salle-de-jeu.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.salleAttente .container{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    width:80%;
+    height:400px;
+
+    margin:auto;
+    display:block;
+
+    background-color:rgba(255,255,255,0.5);
+    padding:0;
+    padding-bottom:1em;
+}
+
+.salleAttente .container header{
+    margin-top:0;
+    margin-bottom: 1em;
+    background-image:url('../../assets/css/img/fond-menu.jpg');
+}
+.salleAttente .container header h1{
+    padding:0;
+    margin:0;
+    padding:1em;
+    color:#fff;
+}
+
+.salleAttente .lesJoueurs{
+    flex-wrap:wrap; 
+    margin:2em;
+    height:auto;
+}
+
+.salleAttente .lesJoueurs .unJoueur{
+    height:10rem;
+    width:8rem;
+    margin:0.1em;
+}
+
+.salleAttente .lesJoueurs .unJoueur:not(.empty){
+    background-color:#000;
+}
+
+.salleAttente .lesJoueurs .unJoueur img{
+width:auto;
+height:8.5rem;
+}
+
+.salleAttente .lesJoueurs .unJoueur h2{
+    color:#fff;
+    background-color:#000;
+    padding: 0.1em 0.2em;
+    font-size:1em;
+}
+
+.salleAttente .lesJoueurs .unJoueur.empty{
+    border:dashed 2px #fff;
+}
+
+.salleAttente button{
+    display:block;
+    margin: 0 auto;
+    padding:0.6em 2em;
+    background:ivory;
+    border:none;
+    margin-top:1.5em;
+    cursor:pointer;
+    border:solid 1px #000;
 }

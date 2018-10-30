@@ -8,6 +8,7 @@ import { Player } from '../models/player';
 export class GlobalService {
   currentUser:Player;
   constructor(connection:ConnectionService) {}
+  
   getCurrentUser(){
     return this.currentUser;
   }
