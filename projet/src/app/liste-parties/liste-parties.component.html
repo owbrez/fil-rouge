@@ -1,48 +1,15 @@
 
-  <div class="unePartie">
-    <h2>Nom Partie</h2>
+  <div class="unePartie" *ngFor="let game of games">
+    <h2>{{game.name}}</h2>
     <p>Les joueurs</p>
     <ul>
-      <li>Pseudo:<img src=""> </li>
-      <li>Pseudo:<img src=""> </li>
-      <li>Pseudo:<img src=""></li>
-      <li>Pseudo:<img src=""></li>
+      <li *ngFor="let player of game.players">Pseudo: {{player.pseudo}}<img src=""> </li>
       <li class="placeVide"></li>
     </ul>
     <button class="rejoindreUnePartie">S'asseoir à la table</button>
-  </div><div class="unePartie">
-  <h2>Nom Partie</h2>
-  <p>Les joueurs</p>
-  <ul>
-    <li>Pseudo:<img src=""> </li>
-    <li>Pseudo:<img src=""> </li>
-    <li>Pseudo:<img src=""></li>
-    <li>Pseudo:<img src=""></li>
-    <li class="placeVide"></li>
-  </ul>
-  <button class="rejoindreUnePartie">S'asseoir à la table</button>
-</div><div class="unePartie">
-  <h2>Nom Partie</h2>
-  <p>Les joueurs</p>
-  <ul>
-    <li>Pseudo:<img src=""> </li>
-    <li>Pseudo:<img src=""> </li>
-    <li>Pseudo:<img src=""></li>
-    <li>Pseudo:<img src=""></li>
-    <li class="placeVide"></li>
-  </ul>
-  <button class="rejoindreUnePartie">S'asseoir à la table</button>
-</div><div class="unePartie">
-  <h2>Nom Partie</h2>
-  <p>Les joueurs</p>
-  <ul>
-    <li>Pseudo:<img src=""> </li>
-    <li>Pseudo:<img src=""> </li>
-    <li>Pseudo:<img src=""></li>
-    <li>Pseudo:<img src=""></li>
-    <li class="placeVide"></li>
-  </ul>
+  </div>
   <button class="rejoindreUnePartie">S'asseoir à la table</button>
 </div>
+
 
 
