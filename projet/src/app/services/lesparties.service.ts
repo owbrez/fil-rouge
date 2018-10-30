@@ -15,5 +15,7 @@ export class LespartiesService {
   getParties(){
     return this.http.get<Game[]>('http://192.168.110.127:666/games/not-started')
   }
+
+
 }
 
